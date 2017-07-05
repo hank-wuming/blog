@@ -2,15 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\View\View;
+use App\Contracts\Repository\UserRepoContract;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    private $request;
+    private $user_repo;
+
     /**
-     * @return View
+     * HomeController constructor.
+     *
+     * @param Request          $request
+     * @param UserRepoContract $user_repo_contract
      */
-    public function home()
+    public function __construct(
+        Request $request,
+        UserRepoContract $user_repo_contract
+    ) {
+        $this->middleware('auth');
+
+        $this->request   = $request;
+        $this->user_repo = $user_repo_contract;
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-        return view('home.home');
+        return view('home');
     }
 }
