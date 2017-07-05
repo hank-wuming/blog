@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('CACHE_DRIVER', 'file'),
+    'default' => env('CACHE_DRIVER', 'redis'),
 
     /*
     |--------------------------------------------------------------------------
@@ -70,7 +70,15 @@ return [
 
         'redis' => [
             'driver' => 'redis',
-            'connection' => 'default',
+            'client' => 'predis',
+
+            'default' => [
+                'host' => env('REDIS_HOST', 'redis'),
+                'password' => env('REDIS_PASSWORD', null),
+                'port' => env('REDIS_PORT', 6379),
+                'database' => 0,
+            ],
+
         ],
 
     ],
