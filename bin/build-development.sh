@@ -19,7 +19,7 @@ git fetch origin master:master
 git flow init -d
 
 # Update environment config
-cp .env.dev.example .env
+cp .env.example .env
 
 # composer install
 composer install
@@ -31,5 +31,7 @@ npm install
 bower install
 
 #run docker
+git submodule update --init laradock/
 cd laradock
+cp .env-dev .env
 docker-compose up -d nginx php-fpm mysql redis
