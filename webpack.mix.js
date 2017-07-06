@@ -13,3 +13,22 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+
+mix.copy('bower_components/bootstrap/dist/fonts', 'public/assets/fonts');
+mix.copy('bower_components/fontawesome/fonts', 'public/assets/fonts');
+
+mix.styles([
+    'bower_components/bootstrap/dist/css/bootstrap.css',
+    'bower_components/fontawesome/css/font-awesome.css',
+    'resources/assets/css/sb-admin-2.css',
+    'resources/assets/css/timeline.css'
+], 'public/assets/stylesheets/styles.css', './');
+
+mix.scripts([
+    'bower_components/jquery/dist/jquery.js',
+    'bower_components/bootstrap/dist/js/bootstrap.js',
+    'bower_components/Chart.js/Chart.js',
+    'bower_components/metisMenu/dist/metisMenu.js',
+    'resources/assets/js/sb-admin-2.js',
+    'resources/assets/js/frontend.js'
+], 'public/assets/scripts/frontend.js', './');
