@@ -8770,6 +8770,10 @@ body {
     overflow-y: scroll;
 }
 
+.panel-margin-top {
+    margin-top: 10%
+}
+
 .login-panel {
     margin-top: 25%;
 }

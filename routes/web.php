@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,12 +11,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Auth::routes();
-
-Route::get('/', function () {
-    return view('home');
-});
 
 Route::get('/charts', function () {
     return view('mcharts');
@@ -37,7 +32,6 @@ Route::get('/buttons', function () {
     return view('buttons');
 });
 
-
 Route::get('/icons', function () {
     return view('icons');
 });
@@ -58,10 +52,14 @@ Route::get('/blank', function () {
     return view('blank');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+
 
 Route::get('/documentation', function () {
     return view('documentation');
 });
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/home', 'HomeController@index')->name('home');
