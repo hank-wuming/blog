@@ -11,4 +11,11 @@ interface UserRepoContract
      * @return User[]|Collection
      */
     public function all();
+
+    /**
+     * @param int $id
+     *
+     * @return User
+     */
+    public function find(int $id): User;
 }

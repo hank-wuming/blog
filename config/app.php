@@ -228,6 +228,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        // App Facades
+        'UserRepo' => App\Facades\UserRepo::class,
+
     ],
 
 ];
