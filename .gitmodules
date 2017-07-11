@@ -1,3 +1,6 @@
 [submodule "laradock"]
 	path = laradock
 	url = git@github.com:hank-wuming/laradock.git
+[submodule "vendor"]
+	path = vendor
+	url = git@github.com:hank-wuming/blog-composer.git

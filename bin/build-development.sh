@@ -22,7 +22,7 @@ git flow init -d
 cp .env.example .env
 
 # composer install
-composer install
+git submodule update --init vendor/
 
 # npm install
 npm install

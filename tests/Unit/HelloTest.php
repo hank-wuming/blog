@@ -19,6 +19,7 @@ class UserTest extends Unit
 
     public function testFindUser()
     {
+        $this->tester->seeInDatabase('users', ['name' => 'Hank']);
         $this->tester->assertTrue(true);
     }
 }
