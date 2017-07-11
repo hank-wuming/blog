@@ -3,7 +3,7 @@
 # Hook for git post-merge
 
 # Update git hooks
-sh deployment/update-hooks.sh
+sh bin/update-hooks.sh
 
 # Update submodules
 #sh deployment/update-submodules.sh
