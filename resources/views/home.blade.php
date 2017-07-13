@@ -437,3 +437,6 @@
     </div>
     <!-- /.col-lg-4 -->
 @stop
+@push('scripts')
+<script src="{{ mix('js/chart.js') }}"></script>
+@endpush
