@@ -12,7 +12,4 @@ npm-debug.log
 _ide_helper.php
 _ide_helper_models.php
 .phpstorm.meta.php
-app/Http/Controllers/TestController.php
-resources/views/test.blade.php
-resources/assets/js/test.js
 public/js/test.js

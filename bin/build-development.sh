@@ -27,6 +27,12 @@ git submodule update --init vendor/
 # npm install
 npm install
 
+# Generate a new IDE Helper file
+php artisan ide-helper:generate
+
+# Generate metadata for PhpStorm
+php artisan ide-helper:meta
+
 #run docker
 git submodule update --init laradock/
 cd laradock
