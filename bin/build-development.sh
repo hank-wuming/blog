@@ -27,9 +27,6 @@ git submodule update --init vendor/
 # npm install
 npm install
 
-# bower install
-bower install
-
 #run docker
 git submodule update --init laradock/
 cd laradock

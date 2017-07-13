@@ -10,25 +10,27 @@ let mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
-
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
-
-mix.copy('bower_components/bootstrap/dist/fonts', 'public/assets/fonts');
-mix.copy('bower_components/fontawesome/fonts', 'public/assets/fonts');
+mix.sass('resources/assets/sass/app.scss', 'public/css');
 
 mix.styles([
-    'bower_components/bootstrap/dist/css/bootstrap.css',
-    'bower_components/fontawesome/css/font-awesome.css',
     'resources/assets/css/sb-admin-2.css',
     'resources/assets/css/timeline.css'
-], 'public/assets/stylesheets/styles.css', './');
+], 'public/css/main.css', './');
 
 mix.scripts([
-    'bower_components/jquery/dist/jquery.js',
-    'bower_components/bootstrap/dist/js/bootstrap.js',
-    'bower_components/Chart.js/Chart.js',
-    'bower_components/metisMenu/dist/metisMenu.js',
+    'node_modules/jquery/dist/jquery.js',
+    'node_modules/bootstrap/dist/bootstrap.js',
+    'node_modules/chart.js/dist/Chart.js',
+    'node_modules/metismenu/dist/metisMenu.js',
+], 'public/js/app.js');
+
+mix.scripts([
     'resources/assets/js/sb-admin-2.js',
     'resources/assets/js/frontend.js'
-], 'public/assets/scripts/frontend.js', './');
+], 'public/js/main.js', './');
+
+mix.js('resources/assets/js/test.js', 'public/js');
+
+if (mix.inProduction()) {
+    mix.version();
+}

@@ -18,12 +18,17 @@
     "less": "^2.7.2",
     "less-loader": "^4.0.4",
     "lodash": "^4.17.4",
-    "vue": "^2.1.10"
+    "vue": "^2.1.10",
+    "fontawesome": "^4.7.2"
   },
   "dependencies": {
     "aws-sdk": "^2.80.0",
+    "bootstrap": "^3.3.7",
+    "chart.js": "^2.6.0",
     "child_process": "^1.0.2",
+    "font-awesome": "^4.7.0",
     "fs": "0.0.1-security",
+    "metismenu": "^2.7.0",
     "module": "^1.2.5",
     "net": "^1.0.2",
     "tls": "0.0.1",

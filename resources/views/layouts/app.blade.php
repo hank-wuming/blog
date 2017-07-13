@@ -16,10 +16,13 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link href="{{ asset("assets/stylesheets/styles.css") }}" rel="stylesheet"/>
+    <link href="{{ mix("css/app.css") }}" rel="stylesheet"/>
+    <link href="{{ mix("css/main.css") }}" rel="stylesheet"/>
 </head>
 <body>
 @yield('body')
-<script src="{{ asset("assets/scripts/frontend.js") }}"></script>
+    <script src="{{ mix("js/app.js") }}"></script>
+    <script src="{{ mix("js/main.js") }}"></script>
+@stack('scripts')
 </body>
 </html>

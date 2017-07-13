@@ -52,8 +52,6 @@ Route::get('/blank', function () {
     return view('blank');
 });
 
-
-
 Route::get('/documentation', function () {
     return view('documentation');
 });
@@ -63,3 +61,10 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/**
+ * Test Controller, Only run at the develop environment
+ */
+if (app()->environment('local')) {
+    Route::get('/test', 'TestController@index');
+}
