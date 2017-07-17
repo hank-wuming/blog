@@ -62,6 +62,10 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/ajax', function (){
+    return ['PHP', 'Laravel', 'Ajax'];
+});
+
 /**
  * Test Controller, Only run at the develop environment
  */
