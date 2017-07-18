@@ -21,17 +21,20 @@ Vue.http.headers.common['X-CSRF-TOKEN']  = $('meta[name="csrf-token"]').attr('co
 
 Vue.component('example', require('./components/Example.vue'));
 
-let data = { message: 0 };
 let app = new Vue({
     el: '#app',
     data: {
         message: 'Hello Vue!',
-        skills: []
+        skills: [],
+        url: '<a href="https://google.com">google</a>',
+        url2: 'https://www.google.com'
     },
-    created() {
+    mounted() {
         this.$http.get('/ajax').then(response => this.skills = response.data);
     }
 });
+
+let data = { message: 0 };
 
 Vue.component('test', {
     template: '<button v-on:click="hello">{{ message }}</button>',
@@ -56,3 +59,27 @@ new Vue({
     el: '#app-3'
 });
 
+let apple = new Vue({
+    el: '#example',
+    data: {
+        firstName: 'Hank',
+        lastName: 'Chang'
+    },
+    computed: {
+        // a computed getter
+        fullName: {
+            set: function (newValue) {
+                let names = newValue.split(' ');
+                this.firstName = names[0];
+                this.lastName = names[names.length - 1];
+            },
+            get: function () {
+                return this.firstName + ' ' + this.lastName;
+            }
+        }
+    }
+});
+
+apple.fullName = 'Petter Wu';
+
+console.log(apple.fullName);

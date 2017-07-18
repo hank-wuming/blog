@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button v-on:click="testHello">{{ hello }}</button>
+        <button @click="testHello">{{ hello }}</button>
         <ul>
             <li v-for="skill in skills">{{ skill }}</li>
         </ul>
@@ -18,7 +18,9 @@
         methods: {
             testHello: function () {
                 alert(this.top);
-                this.$http.get('/ajax').then(response => data.skills = response.data);
+                this.$http.get('/ajax').then(
+                    response => data.skills = response.data
+                );
             }
         },
     }
