@@ -33,6 +33,9 @@ php artisan ide-helper:generate
 # Generate metadata for PhpStorm
 php artisan ide-helper:meta
 
+# Update git hook
+sh bin/update-hooks.sh
+
 #run docker
 git submodule update --init laradock/
 cd laradock
