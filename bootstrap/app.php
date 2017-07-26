@@ -52,4 +52,21 @@ $app->singleton(
 |
 */
 
+$app->configureMonologUsing(function(\Monolog\Logger $monolog) {
+
+    $client = new \Elastica\Client(
+        ['host' => env('ELASTICSEARCH_HOST'), 'port' => env('ELASTICSEARCH_PORT'), 'transport' => 'http']
+    );
+
+    $handler = new \Monolog\Handler\ElasticSearchHandler($client);
+
+    $formatter = new \Monolog\Formatter\ElasticaFormatter('blog_laravel', 'app_log');
+    $processor = new \Monolog\Processor\TagProcessor(['blog_laravel_log']);
+
+    $handler->setFormatter($formatter);
+
+    $monolog->pushProcessor($processor);
+    $monolog->pushHandler($handler);
+});
+
 return $app;

@@ -32,6 +32,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        \Log::info('Hello');
         return view('home');
     }
 }

@@ -3,6 +3,8 @@
 namespace App\Eloquent;
 
 use App\Contracts\Entity\User as UserEntity;
+use App\Eloquent\User as UserEloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -23,13 +25,13 @@ use Eloquent;
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Eloquent\User whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Eloquent\User whereEmail($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Eloquent\User whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Eloquent\User whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Eloquent\User wherePassword($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Eloquent\User whereRememberToken($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Eloquent\User whereUpdatedAt($value)
+ * @method static Builder|UserEloquent whereCreatedAt($value)
+ * @method static Builder|UserEloquent whereEmail($value)
+ * @method static Builder|UserEloquent whereId($value)
+ * @method static Builder|UserEloquent whereName($value)
+ * @method static Builder|UserEloquent wherePassword($value)
+ * @method static Builder|UserEloquent whereRememberToken($value)
+ * @method static Builder|UserEloquent whereUpdatedAt($value)
  */
 class User extends Eloquent implements
     AuthenticatableContract,
@@ -94,6 +96,14 @@ class User extends Eloquent implements
     /**
      * @inheritDoc
      */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function setEmail(string $email): UserEntity
     {
         $this->email = $email;
@@ -104,11 +114,27 @@ class User extends Eloquent implements
     /**
      * @inheritDoc
      */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function setPassword(string $password): UserEntity
     {
         $this->password = bcrypt($password);
 
         return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
     }
 
     /**
