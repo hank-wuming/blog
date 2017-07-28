@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\Event;
 use Illuminate\Http\Request;
 
 /**
@@ -32,6 +33,12 @@ class TestController extends Controller
      */
     public function index()
     {
+        broadcast(new Event());
         return view('test');
+    }
+
+    public function broadcasting()
+    {
+        return view('test.broadcasting');
     }
 }

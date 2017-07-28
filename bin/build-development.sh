@@ -38,7 +38,7 @@ sh bin/update-hooks.sh
 git submodule update --init laradock/
 cd laradock
 cp .env-dev .env
-docker-compose up -d nginx php-fpm mysql redis
+docker-compose up -d --build nginx php-fpm mysql redis elasticsearch fluentd kibana laravel-echo-server workspace
 
 # Initialize database
 docker-compose exec mysql bash docker-entrypoint-initdb.d/bin/initialize-database.sh

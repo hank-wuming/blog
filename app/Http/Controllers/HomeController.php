@@ -22,7 +22,7 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
 
-        $this->request   = $request;
+        $this->request = $request;
     }
 
     /**

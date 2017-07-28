@@ -33,6 +33,7 @@ mix.scripts([
 ], 'public/js/chart.js');
 
 mix.js('resources/assets/js/test.js', 'public/js');
+mix.js('resources/assets/js/bootstrap.js', 'public/js');
 
 if (mix.inProduction()) {
     mix.version();

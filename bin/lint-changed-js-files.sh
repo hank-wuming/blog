@@ -13,4 +13,4 @@ if [ "$files" = "" ]; then
     exit ${EX_OK}
 fi
 
-gulp jshint
+#gulp jshint

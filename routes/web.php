@@ -66,6 +66,8 @@ Route::get('/ajax', function (){
     return ['PHP', 'Laravel', 'Ajax'];
 });
 
+Route::get('/broadcasting', 'TestController@broadcasting')->name('broadcasting');
+
 /**
  * Test Controller, Only run at the develop environment
  */
