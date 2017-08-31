@@ -167,7 +167,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
-        Jenssegers\Mongodb\MongodbServiceProvider::class,
+        //Jenssegers\Mongodb\MongodbServiceProvider::class,
 
         /*
          * Application Service Providers...
